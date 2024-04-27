@@ -1,0 +1,43 @@
+{% load static %}
+<html>
+<head>
+    <title>Django Girls blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+    <div class="page-header">
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1><a href="/">Django Luis fernando</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{% endif %}
+                {% block content %}
+                <h2>Que es la Ciberseguridad</h2>
+                <p>La ciberseguridad es un campo que se ocupa de proteger sistemas informáticos, redes y datos contra ataques, daños, acceso no autorizado, robo o cualquier otro tipo de amenaza que pueda comprometer la seguridad y la integridad de la información. La ciberseguridad se refiere a la práctica de proteger sistemas informáticos, redes, dispositivos y datos contra ataques, daños, acceso no autorizado, robo, manipulación o cualquier otro tipo de amenaza que pueda comprometer la seguridad y la integridad de la información. Es un campo multidisciplinario que abarca una amplia gama de medidas y técnicas diseñadas para prevenir, detectar, responder y recuperarse de las amenazas cibernéticas.</p>
+
+                <h2>Protección de Datos</h2>
+                <p>La ciberseguridad implica proteger los datos confidenciales y sensibles de organizaciones y usuarios. Esto puede incluir información personal, datos financieros, secretos comerciales o cualquier otro tipo de datos que pueda ser objetivo de robo o manipulación.</p>
+
+                <h2>Seguridad de Red</h2>
+                <p>La seguridad de la red es la práctica de proteger las redes de computadoras, servidores y dispositivos. La seguridad de red se refiere a proteger las redes de computadoras contra accesos no autorizados, intercepción de datos, manipulación de datos y otros ataques. Esto implica implementar medidas como firewalls, sistemas de detección y prevención de intrusiones (IDS/IPS), cifrado de datos, entre otros.</p>
+
+                <h2>Seguridad en la nube</h2>
+                <p>Con el aumento de la adopción de servicios en la nube, la seguridad en la nube se ha vuelto crucial. Esto implica proteger los datos y recursos almacenados en la nube, así como garantizar la seguridad de las conexiones a los servicios en la nube.</p>
+
+                <h2>Investigación y Desarrollo</h2>
+                <p>La ciberseguridad es un campo en constante evolución debido a la naturaleza cambiante de las amenazas cibernéticas. La investigación y el desarrollo de nuevas tecnologías y técnicas para defenderse contra las amenazas cibernéticas son fundamentales para mantener la seguridad de los sistemas informáticos y las redes.</p>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
